@@ -12,14 +12,12 @@ namespace Domain.Entities
         public string Bio { get; set; } = new string("");
         public string? Avatar { get; set; }
         public bool IsDeleted { get; set; } = false;
+
+        //Audit/System metadata
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
         public virtual string? Discriminator { get; set; }
-
-        //public Guid? OrganizationId { get; set; }
-        //[ForeignKey(nameof(OrganizationId))]
-        //public virtual Organization? Organization { get; set; }
 
         public Guid? PhysicalAddressId { get; set; }
         [ForeignKey(nameof(PhysicalAddressId))]
