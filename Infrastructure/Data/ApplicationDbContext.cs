@@ -1,9 +1,6 @@
 ﻿using Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore; // <-- Use this namespace
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Reflection.Emit;
 using PhysicalAddress = Domain.Entities.PhysicalAddress;
 
 namespace Infrastructure.Data
