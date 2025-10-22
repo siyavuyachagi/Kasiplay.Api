@@ -1,24 +1,79 @@
-KasiPlay Proprietary SaaS License © 2025 Chagi Siyavuya
+# KasiPlay Proprietary License
 
-All rights reserved. 
+Copyright © 2025 Siyavuya Chagi (@siyavuyachagi). All Rights Reserved.
 
-1. Ownership
-KasiPlay, including all source code, design, documentation, APIs, database structures, and related materials (collectively, the "Software"), is the exclusive property of Chagi Siyavuya.
+## PROPRIETARY SOFTWARE LICENSE
 
-2. Permitted Use
-You may access and use the KasiPlay service via the official hosted platform (https://kasiplay.co.za) under the terms of this license. Access may be free or subject to subscription fees as determined by KasiPlay.
+This software and associated documentation files (the "Software") are proprietary and confidential to Siyavuya Chagi ("Owner"). The Software is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties.
 
-3. Restrictions
-You may NOT, under any circumstances:
-   - Copy, modify, distribute, sell, sublicense, or reverse-engineer the Software
-   - Host or operate your own version of the Software
-   - Use the Software outside of the official hosted platform
-   - Use KasiPlay branding, logos, or trademarks without explicit permission
+## RESTRICTIONS
 
-4. Termination
-Violation of this license will result in immediate termination of access to the SaaS platform and may lead to legal action.
+YOU ARE NOT PERMITTED TO:
 
-5. Warranty Disclaimer
-The Software is provided "as-is". KasiPlay makes no warranties regarding availability, performance, or suitability. Liability is limited to the fullest extent permitted by law.
+1. **Copy, reproduce, or duplicate** any part of the Software
+2. **Distribute, publish, or make available** the Software to any third party
+3. **Modify, adapt, alter, or create derivative works** based upon the Software
+4. **Reverse engineer, decompile, disassemble,** or otherwise attempt to derive the source code
+5. **Use the Software for commercial purposes** without explicit written permission
+6. **Remove or alter any copyright notices** or proprietary markings
+7. **Grant sublicenses** or transfer rights to the Software
 
-Contact for commercial inquiries or licensing: info@kasiplay.co.za
+## PERMITTED USES
+
+The Software is made available solely for:
+- **Viewing and evaluation purposes** by authorized individuals
+- **Educational review** of the codebase structure and implementation
+- **Technical assessment** by potential collaborators with prior written consent
+
+## NO CONTRIBUTIONS ACCEPTED
+
+**IMPORTANT NOTICE:** This project is currently **NOT ACCEPTING CONTRIBUTIONS** of any kind, including but not limited to:
+- Pull requests
+- Code contributions
+- Documentation improvements
+- Bug reports or feature requests
+- Translations
+
+Any unsolicited contributions will not be reviewed or incorporated.
+
+## VIEWING PERMISSION
+
+By accessing this repository, you acknowledge that:
+1. You are viewing the Software for **evaluation purposes only**
+2. You will **NOT copy, download, or use** any part of the Software
+3. You understand this is **proprietary code** with full copyright protection
+4. You agree to respect the intellectual property rights of the Owner
+
+## LEGAL ENFORCEMENT
+
+Unauthorized use, copying, distribution, or modification of this Software will result in:
+- **Immediate legal action** for copyright infringement
+- **Claims for monetary damages** including but not limited to lost profits
+- **Injunctive relief** to prevent further unauthorized use
+- **Attorney fees and court costs**
+
+## DISCLAIMER
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE OWNER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## CONTACT FOR LICENSING
+
+For inquiries regarding:
+- **Commercial licensing**
+- **Partnership opportunities** 
+- **Authorized usage permissions**
+
+**Contact:**
+- **Email:** syavuya08@gmail.com
+- **Phone:** +27 63 961 5361
+- **Social:** @siyavuyachagi
+
+## JURISDICTION
+
+This license shall be governed by and construed in accordance with the laws of South Africa. Any disputes arising from this license shall be subject to the exclusive jurisdiction of the courts of South Africa.
+
+---
+
+⚠️ WARNING: UNAUTHORIZED USE IS STRICTLY PROHIBITED
+
+This repository is made public for portfolio and demonstration purposes only. All code, design, and documentation remain the exclusive property of Siyavuya Chagi.

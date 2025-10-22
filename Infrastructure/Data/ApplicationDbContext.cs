@@ -1,13 +1,17 @@
-﻿using Domain.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore; // <-- Use this namespace
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using PhysicalAddress = Domain.Entities.PhysicalAddress;
+using Domain.Entities;
 
 namespace Infrastructure.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser> // <-- Use the correct base class
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+        }
+
+        // Add parameterless constructor for EF Core migrations
+        public ApplicationDbContext() : base()
         {
         }
 
@@ -50,16 +54,6 @@ namespace Infrastructure.Data
                     .WithMany()
                     .HasForeignKey(e => e.PhysicalAddressId)
                     .OnDelete(DeleteBehavior.SetNull);
-
-                // Configure roles relationship
-                entity.HasMany(e => e.IdentityUserRoles)
-                    .WithOne()
-                    .HasForeignKey(ur => ur.UserId)
-                    .IsRequired();
-
-                entity.HasMany(e => e.IdentityRoles)
-                    .WithMany()
-                    .UsingEntity(j => j.ToTable("AspNetUserRoles"));
             });
 
             // Configure PhysicalAddress
@@ -69,5 +63,7 @@ namespace Infrastructure.Data
                 entity.Property(e => e.Id).HasDefaultValueSql("NEWID()");
             });
         }
+
+
     }
 }
