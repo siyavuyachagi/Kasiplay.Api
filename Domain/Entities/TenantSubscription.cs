@@ -3,17 +3,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class Organization
+    public class TenantSubscription
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
-        public string TenantId { get; set; }
+        public Guid TenantId { get; set; }
         [ForeignKey(nameof(TenantId))]
         public virtual Tenant Tenant { get; set; }
 
-        public string Name { get; set; }
-        public int YearEstablished { get; set; }
+        public Guid SubscriptionId { get; set; }
+        [ForeignKey(nameof(SubscriptionId))]
+        public virtual Subscription Subscription { get; set; }
+
+        public DateTime StartAt { get; set; }
+        public DateTime EndAt { get; set; }
 
         // System metadata
         public DateTime CreatedAt { get; set; }

@@ -2,14 +2,15 @@
 {
     public enum AdministratorRole
     {
+        Super,
         System,
-        Operations,
+        Support,
         Management
     }
 
 
     public class Administrator: ApplicationUser
     {
-        public AdministratorRole AdminRole { get; set; }
+        public AdministratorRole Role { get; set; }
     }
 }

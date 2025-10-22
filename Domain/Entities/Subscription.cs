@@ -23,5 +23,15 @@ namespace Domain.Entities
         public Guid Id { get; set; }
 
         public SubscriptionTier Tier { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal PricePerMonth { get; set; }
+
+        // System metadata
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+
+        // Navigation properties
+        public virtual ICollection<TenantSubscription> TenantSubscriptions { get; set; }
     }
 }

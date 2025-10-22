@@ -14,6 +14,7 @@ namespace Domain.Entities
         public string State { get; set; }
         public string Country { get; set; }
 
+        // Audit/System metadata
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
     }
