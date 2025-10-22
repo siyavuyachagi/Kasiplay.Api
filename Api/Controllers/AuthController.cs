@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
@@ -26,6 +27,7 @@ namespace Api.Controllers
 
         [HttpPost("login")]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Login([FromBody] LoginModel loginModel)
         {
             try

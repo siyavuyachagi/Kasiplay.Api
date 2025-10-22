@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Net.NetworkInformation;
 
@@ -8,12 +8,12 @@ namespace Domain.Entities
     {
         public string LastName { get; set; } = new string("");
         public string FirstName { get; set; } = new string("");
-        public string Gender { get; set; }
+        public string Gender { get; set; } = new string("Not specified");
         public string Bio { get; set; } = new string("");
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
         public string? Avatar { get; set; }
         public bool IsDeleted { get; set; } = false;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
         public virtual string? Discriminator { get; set; }
 

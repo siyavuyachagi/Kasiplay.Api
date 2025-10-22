@@ -1,0 +1,3 @@
+22/10/2025
+Microsoft.AspNetCore.Identity.EntityFrameworkCore
+Compatibility errors: Downgrade to v8.* since I am on .net8
