@@ -15,7 +15,6 @@ This document outlines the internal development standards, naming conventions, c
 - [Security Standards](#security-standards)
 - [Performance Guidelines](#performance-guidelines)
 - [Code Review Checklist](#code-review-checklist)
-- [Commit Message Rules](#commit-message-rules)
 
 ---
 
@@ -1074,7 +1073,6 @@ test/add-player-service-tests
 - `docs`: Documentation changes
 - `style`: Code style changes (no logic change)
 - `refactor`: Code refactoring
-- `perf`: Performance improvements
 - `test`: Test additions or modifications
 - `chore`: Build, dependency updates, etc.
 
