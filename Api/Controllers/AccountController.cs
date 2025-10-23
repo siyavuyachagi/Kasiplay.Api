@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers
 {
     [ApiController, Route("api/[controller]")]
+    [Authorize]
     public class AccountController : Controller
     {
         public AccountController() { }
-
 
         [HttpGet]
         public IActionResult Index()
@@ -17,7 +17,7 @@ namespace Api.Controllers
 
 
 
-        [HttpPost]
+        [HttpPost("register")]
         [AutoValidateAntiforgeryToken]
         [AllowAnonymous]
         public IActionResult Register([FromBody] object profileData)
@@ -30,6 +30,22 @@ namespace Api.Controllers
             catch
             {
                 return BadRequest(new { message = "Failed to update profile." });
+            }
+        }
+
+
+        [HttpPost("profile")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> ProfileInfo()
+        {
+            try
+            {
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
     }

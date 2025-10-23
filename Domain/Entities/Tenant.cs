@@ -19,6 +19,11 @@ namespace Domain.Entities
         [ForeignKey(nameof(TenantSubscriptionId))]
         public TenantSubscription TenantSubscription { get; set; }
 
+        // Billing info
+        public Guid BillingId { get; set; }
+        [ForeignKey(nameof(BillingId))]
+        public virtual Billing Billing { get; set; }
+
         // Connection info
         public string SchemaName { get; set; }
         public string ConnectionString { get; set; }
