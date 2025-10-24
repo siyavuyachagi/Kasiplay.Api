@@ -31,7 +31,7 @@ namespace Domain.Entities
         public Guid Id { get; set; }
 
         // Player reference
-        public Guid PlayerId { get; set; }
+        public string PlayerId { get; set; }
         [ForeignKey(nameof(PlayerId))]
         public virtual Player Player { get; set; }
 

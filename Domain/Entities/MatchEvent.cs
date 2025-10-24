@@ -47,27 +47,27 @@ namespace Domain.Entities
         public virtual Team? Team { get; set; }
 
         // Players involved
-        public Guid? PlayerId { get; set; }
+        public string? PlayerId { get; set; }
         [ForeignKey(nameof(PlayerId))]
         public virtual Player? Player { get; set; }
 
-        public Guid? AssistingPlayerId { get; set; }
+        public string? AssistingPlayerId { get; set; }
         [ForeignKey(nameof(AssistingPlayerId))]
         public virtual Player? AssistingPlayer { get; set; }
 
-        public Guid? FoulerId { get; set; }
+        public string? FoulerId { get; set; }
         [ForeignKey(nameof(FoulerId))]
         public virtual Player? Fouler { get; set; }
 
-        public Guid? FouledId { get; set; }
+        public string? FouledId { get; set; }
         [ForeignKey(nameof(FouledId))]
         public virtual Player? Fouled { get; set; }
 
-        public Guid? SubstituteInId { get; set; }
+        public string? SubstituteInId { get; set; }
         [ForeignKey(nameof(SubstituteInId))]
         public virtual Player? SubstituteIn { get; set; }
 
-        public Guid? SubstituteOutId { get; set; }
+        public string? SubstituteOutId { get; set; }
         [ForeignKey(nameof(SubstituteOutId))]
         public virtual Player? SubstituteOut { get; set; }
 

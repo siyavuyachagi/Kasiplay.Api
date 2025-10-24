@@ -10,7 +10,7 @@
   <Class Name="Domain.Entities.ApplicationUser" Collapsed="true">
     <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAEAIAAAACACACCQACAAAQIAAAAgAAAAAAQAAAAg=</HashCode>
+      <HashCode>AABAAEAIAAAACACACCQACAAAQIAQAAgAAAAAAQAAAAg=</HashCode>
       <FileName>Entities\ApplicationUser.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -22,44 +22,44 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.Club" Collapsed="true">
-    <Position X="3.25" Y="4.75" Width="1.5" />
+    <Position X="8.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACCAAAAAAACAAIACCAAAAAAAAgAIAAQAAAAAAAEAA=</HashCode>
+      <HashCode>ABACCAAAAAAACAAIACCAAAAAQIAgAIAAQAAAAAAAEAA=</HashCode>
       <FileName>Entities\Club.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.Cup" Collapsed="true">
-    <Position X="19.75" Y="0.5" Width="1.5" />
+    <Position X="1" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACOAAAAQAgCAAAACAAAAQAAAAAAgAAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Cup.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.Federation" Collapsed="true">
-    <Position X="1" Y="4.75" Width="1.5" />
+    <Position X="6" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACCAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAEAA=</HashCode>
+      <HashCode>AAACCAAAAAAAAAAAAAAAAAAAAAAAAIAAQAAAAAAAEAA=</HashCode>
       <FileName>Entities\Federation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.Fixture" Collapsed="true">
     <Position X="21.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABACAwAEAAAACAAAAKCAIAAAAACAAAAAAAAQAQAhAAA=</HashCode>
       <FileName>Entities\Fixture.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.League" Collapsed="true">
-    <Position X="23.25" Y="0.5" Width="1.5" />
+    <Position X="3.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACOAAEAQAgCAAAACAAAAQAAAAAAgAAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\League.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.Match" Collapsed="true">
-    <Position X="18" Y="1.5" Width="1.5" />
+    <Position X="23.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAACAIAADAAABAAAggAAAAABAAAQAAABAA=</HashCode>
       <FileName>Entities\Match.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -71,9 +71,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.Organization" Collapsed="true">
-    <Position X="2.25" Y="3.5" Width="1.5" />
+    <Position X="7.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAACAAAACAAAAQAAAAAAAAAAAAgAAAEAAQ=</HashCode>
+      <HashCode>AAACAAAAAAAgCAAAACAAAAQAAAAAAAAAAAAgAQAEAAQ=</HashCode>
       <FileName>Entities\Organization.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -87,7 +87,7 @@
   <Class Name="Domain.Entities.Player" Collapsed="true">
     <Position X="12.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAEAACAAAA=</HashCode>
+      <HashCode>AAAAEAAEAAAAAAAgAEAAAAACAAAAAAAAEAAEAACAAAA=</HashCode>
       <FileName>Entities\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -106,37 +106,37 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.Subscription" Collapsed="true">
-    <Position X="23.25" Y="1.5" Width="1.5" />
+    <Position X="21.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAgCAAAQCAAAAQAAAAAAAAAQAAAgAAAAAA=</HashCode>
       <FileName>Entities\Subscription.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.Team" Collapsed="true">
-    <Position X="18" Y="2.5" Width="1.5" />
+    <Position X="23.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACEAAAAAAACAAAACAAAAQQABAgAAAAAAAAAACAAAA=</HashCode>
+      <HashCode>AAACEAAIAAAACAAAACAAAAQQABAgAAAAAAAAAQCAAAA=</HashCode>
       <FileName>Entities\Team.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.Tenant" Collapsed="true">
-    <Position X="19.75" Y="2.5" Width="1.5" />
+    <Position X="18" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAACAAAAAAAACAARECAAAAgACAAAAAABACAAAAAAQAA=</HashCode>
       <FileName>Entities\Tenant.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.TenantSubscription" Collapsed="true">
-    <Position X="21.5" Y="2.5" Width="1.75" />
+    <Position X="19.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACEAAAEIAACAAAACAAAAAAAAAAAgAAAAAgAAAEAAA=</HashCode>
+      <HashCode>AAACECAAEIAAKAAAECAAAAAAAEAAAgAAAAAgAAAEAAA=</HashCode>
       <FileName>Entities\TenantSubscription.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Domain.Entities.Tournament" Collapsed="true">
-    <Position X="23.25" Y="2.5" Width="1.5" />
+    <Position X="21.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACKAAAAQAgCAAAACAAAAQAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAACAAAAQAgCAAAACAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\Tournament.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -150,7 +150,7 @@
   <Class Name="Domain.Entities.MatchRecord" Collapsed="true">
     <Position X="19.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AACiAgAAAAAACAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\MatchRecord.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -161,39 +161,151 @@
       <FileName>Entities\RegistrationApplication.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Domain.Entities.Competition" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACOAAAAQAgCAAAACAAAAQAAAAAAgAAAAAAAQAAQAA=</HashCode>
+      <FileName>Entities\Competition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.FileResource" Collapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAACARAACAAAAQAACIgAAAIAQAIAQtCAAA=</HashCode>
+      <FileName>Entities\FileResource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.MatchEvent" Collapsed="true">
+    <Position X="18" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiwgAgQAAgCAAAACACAAACkAAAACAAGQAIAQAGAAQ=</HashCode>
+      <FileName>Entities\MatchEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.PlayerInjury" Collapsed="true">
+    <Position X="23.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAACAARAgCAAAECAAAAAAAAAAAAAAAQAIAQQAAQA=</HashCode>
+      <FileName>Entities\PlayerInjury.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.PlayerTransferRecord" Collapsed="true">
+    <Position X="18" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAEACiAAACAAAAAAAAkAACgAAYAIAQQAAAA=</HashCode>
+      <FileName>Entities\PlayerTransferRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Domain.Entities.Stadium" Collapsed="true">
+    <Position X="19.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAACAAAACAABAQAQIAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Entities\Stadium.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="Domain.Entities.AdministratorRole" Collapsed="true">
-    <Position X="18" Y="3.75" Width="1.5" />
+    <Position X="18" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAIAAAAAAAAAAAAAAAAAAgAAAAAAABAAAA=</HashCode>
       <FileName>Entities\Administrator.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="Domain.Entities.LeagueStatus" Collapsed="true">
-    <Position X="21.5" Y="3.75" Width="1.5" />
+  <Enum Name="Domain.Entities.CompetitionStatus" Collapsed="true">
+    <Position X="19.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAIAAAAQQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\League.cs</FileName>
+      <FileName>Entities\Competition.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="Domain.Entities.StaffRole" Collapsed="true">
-    <Position X="23.25" Y="3.75" Width="1.5" />
+    <Position X="18" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>jAAEAQQEAIAIAAgAQAIDgCggAICAAAGAiCEEAAgAMAE=</HashCode>
       <FileName>Entities\Staff.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="Domain.Entities.SubscriptionTier" Collapsed="true">
-    <Position X="18" Y="4.5" Width="1.5" />
+    <Position X="21.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAACAAAI=</HashCode>
       <FileName>Entities\Subscription.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="Domain.Entities.Division" Collapsed="true">
-    <Position X="19.75" Y="3.75" Width="1.5" />
+    <Position X="21.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAQAAAAAAAAIAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Entities\Team.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Entities.StorageProvider" Collapsed="true">
+    <Position X="19.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAEAAQAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\FileResource.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Entities.FileType" Collapsed="true">
+    <Position X="23.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAEAgAAAAAAAABACAAAAAAAAAAg=</HashCode>
+      <FileName>Entities\FileResource.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Entities.FixtureStatus" Collapsed="true">
+    <Position X="18" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Fixture.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Entities.MatchEventType" Collapsed="true">
+    <Position X="23.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgAAKBAQAAAwAAAAAABAIAQDAGCAAQgAMAAAAIAEAA=</HashCode>
+      <FileName>Entities\MatchEvent.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Entities.PlayerStatus" Collapsed="true">
+    <Position X="19.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABABACAABAAAAAABAAAAAAgAAIIAACAAAAAAAA=</HashCode>
+      <FileName>Entities\Player.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Entities.PlayerPosition" Collapsed="true">
+    <Position X="18" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAEAAAAAAACAAAFIigAKAACAAAAAAAAEAEEAAsAA=</HashCode>
+      <FileName>Entities\Player.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Entities.InjuryType" Collapsed="true">
+    <Position X="21.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAAQAAAAIAAAIAAAAAAAAAAAAAAAIAAAEAAAAAAABA=</HashCode>
+      <FileName>Entities\PlayerInjury.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Entities.InjurySeverity" Collapsed="true">
+    <Position X="19.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Entities\PlayerInjury.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Entities.PlayerTransferType" Collapsed="true">
+    <Position X="23.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\PlayerTransferRecord.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Domain.Entities.PlayerTransferStatus" Collapsed="true">
+    <Position X="21.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACQAAAIAAEAAAAAAAAAAAAAAABAAIAAAAAA=</HashCode>
+      <FileName>Entities\PlayerTransferRecord.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

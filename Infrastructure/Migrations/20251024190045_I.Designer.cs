@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251024161219_I")]
+    [Migration("20251024190045_I")]
     partial class I
     {
         /// <inheritdoc />
@@ -313,9 +313,6 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<int?>("AwayScore")
-                        .HasColumnType("integer");
-
                     b.Property<Guid>("AwayTeamId")
                         .HasColumnType("uuid");
 
@@ -324,9 +321,6 @@ namespace Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<int?>("HomeScore")
-                        .HasColumnType("integer");
 
                     b.Property<Guid>("HomeTeamId")
                         .HasColumnType("uuid");
@@ -365,7 +359,25 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<int>("AwayScore")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("EndedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("FixtureId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("HomeScore")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsLive")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("StartedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -373,7 +385,84 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FixtureId")
+                        .IsUnique();
+
                     b.ToTable("Matches");
+                });
+
+            modelBuilder.Entity("Domain.Entities.MatchEvent", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("AssistingPlayerId")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FouledId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("FoulerId")
+                        .HasColumnType("text");
+
+                    b.Property<Guid?>("InjuryId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("MatchId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Minute")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("PlayerId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SubstituteInId")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SubstituteOutId")
+                        .HasColumnType("text");
+
+                    b.Property<Guid?>("TeamId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssistingPlayerId");
+
+                    b.HasIndex("FouledId");
+
+                    b.HasIndex("FoulerId");
+
+                    b.HasIndex("InjuryId");
+
+                    b.HasIndex("MatchId");
+
+                    b.HasIndex("PlayerId");
+
+                    b.HasIndex("SubstituteInId");
+
+                    b.HasIndex("SubstituteOutId");
+
+                    b.HasIndex("TeamId");
+
+                    b.ToTable("MatchEvents");
                 });
 
             modelBuilder.Entity("Domain.Entities.MatchRecord", b =>
@@ -385,10 +474,24 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<Guid>("MatchId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Notes")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Summary")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MatchId")
+                        .IsUnique();
 
                     b.ToTable("MatchRecords");
                 });
@@ -477,6 +580,55 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PhysicalAddresss");
+                });
+
+            modelBuilder.Entity("Domain.Entities.PlayerInjury", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime?>("ActualRecoveryDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("ExpectedRecoveryDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("InjuryDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("PlayerId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Severity")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("TreatmentPlan")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlayerId");
+
+                    b.ToTable("PlayerInjuries");
                 });
 
             modelBuilder.Entity("Domain.Entities.PlayerTransferRecord", b =>
@@ -1140,6 +1292,87 @@ namespace Infrastructure.Migrations
                     b.Navigation("Stadium");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Match", b =>
+                {
+                    b.HasOne("Domain.Entities.Fixture", "Fixture")
+                        .WithOne("Match")
+                        .HasForeignKey("Domain.Entities.Match", "FixtureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Fixture");
+                });
+
+            modelBuilder.Entity("Domain.Entities.MatchEvent", b =>
+                {
+                    b.HasOne("Domain.Entities.Player", "AssistingPlayer")
+                        .WithMany()
+                        .HasForeignKey("AssistingPlayerId");
+
+                    b.HasOne("Domain.Entities.Player", "Fouled")
+                        .WithMany()
+                        .HasForeignKey("FouledId");
+
+                    b.HasOne("Domain.Entities.Player", "Fouler")
+                        .WithMany()
+                        .HasForeignKey("FoulerId");
+
+                    b.HasOne("Domain.Entities.PlayerInjury", "Injury")
+                        .WithMany()
+                        .HasForeignKey("InjuryId");
+
+                    b.HasOne("Domain.Entities.Match", "Match")
+                        .WithMany("Events")
+                        .HasForeignKey("MatchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Player", "Player")
+                        .WithMany()
+                        .HasForeignKey("PlayerId");
+
+                    b.HasOne("Domain.Entities.Player", "SubstituteIn")
+                        .WithMany()
+                        .HasForeignKey("SubstituteInId");
+
+                    b.HasOne("Domain.Entities.Player", "SubstituteOut")
+                        .WithMany()
+                        .HasForeignKey("SubstituteOutId");
+
+                    b.HasOne("Domain.Entities.Team", "Team")
+                        .WithMany()
+                        .HasForeignKey("TeamId");
+
+                    b.Navigation("AssistingPlayer");
+
+                    b.Navigation("Fouled");
+
+                    b.Navigation("Fouler");
+
+                    b.Navigation("Injury");
+
+                    b.Navigation("Match");
+
+                    b.Navigation("Player");
+
+                    b.Navigation("SubstituteIn");
+
+                    b.Navigation("SubstituteOut");
+
+                    b.Navigation("Team");
+                });
+
+            modelBuilder.Entity("Domain.Entities.MatchRecord", b =>
+                {
+                    b.HasOne("Domain.Entities.Match", "Match")
+                        .WithOne("Record")
+                        .HasForeignKey("Domain.Entities.MatchRecord", "MatchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Match");
+                });
+
             modelBuilder.Entity("Domain.Entities.Organization", b =>
                 {
                     b.HasOne("Domain.Entities.Tenant", "Tenant")
@@ -1149,6 +1382,17 @@ namespace Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Tenant");
+                });
+
+            modelBuilder.Entity("Domain.Entities.PlayerInjury", b =>
+                {
+                    b.HasOne("Domain.Entities.Player", "Player")
+                        .WithMany()
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Player");
                 });
 
             modelBuilder.Entity("Domain.Entities.PlayerTransferRecord", b =>
@@ -1429,6 +1673,18 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Domain.Entities.Competition", b =>
                 {
                     b.Navigation("Teams");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Fixture", b =>
+                {
+                    b.Navigation("Match");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Match", b =>
+                {
+                    b.Navigation("Events");
+
+                    b.Navigation("Record");
                 });
 
             modelBuilder.Entity("Domain.Entities.Stadium", b =>

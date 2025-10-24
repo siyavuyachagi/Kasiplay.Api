@@ -13,32 +13,6 @@ namespace Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Matches",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Matches", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "MatchRecords",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MatchRecords", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "PhysicalAddresss",
                 columns: table => new
                 {
@@ -278,6 +252,34 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PlayerInjuries",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    PlayerId = table.Column<string>(type: "text", nullable: false),
+                    Type = table.Column<int>(type: "integer", nullable: false),
+                    Severity = table.Column<int>(type: "integer", nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    InjuryDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    ExpectedRecoveryDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    ActualRecoveryDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    TreatmentPlan = table.Column<string>(type: "text", nullable: false),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PlayerInjuries", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PlayerInjuries_AspNetUsers_PlayerId",
+                        column: x => x.PlayerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Billings",
                 columns: table => new
                 {
@@ -338,8 +340,6 @@ namespace Infrastructure.Migrations
                     CompetitionId = table.Column<Guid>(type: "uuid", nullable: true),
                     StadiumId = table.Column<Guid>(type: "uuid", nullable: true),
                     KickoffTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    HomeScore = table.Column<int>(type: "integer", nullable: true),
-                    AwayScore = table.Column<int>(type: "integer", nullable: true),
                     Status = table.Column<int>(type: "integer", nullable: false),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
@@ -357,6 +357,120 @@ namespace Infrastructure.Migrations
                         name: "FK_Fixtures_Stadiums_StadiumId",
                         column: x => x.StadiumId,
                         principalTable: "Stadiums",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Matches",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    FixtureId = table.Column<Guid>(type: "uuid", nullable: false),
+                    HomeScore = table.Column<int>(type: "integer", nullable: false),
+                    AwayScore = table.Column<int>(type: "integer", nullable: false),
+                    IsLive = table.Column<bool>(type: "boolean", nullable: false),
+                    StartedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    EndedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Matches", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Matches_Fixtures_FixtureId",
+                        column: x => x.FixtureId,
+                        principalTable: "Fixtures",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MatchRecords",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    MatchId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Summary = table.Column<string>(type: "text", nullable: false),
+                    Notes = table.Column<string>(type: "text", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MatchRecords", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MatchRecords_Matches_MatchId",
+                        column: x => x.MatchId,
+                        principalTable: "Matches",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MatchEvents",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Minute = table.Column<int>(type: "integer", nullable: false),
+                    Type = table.Column<int>(type: "integer", nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: true),
+                    TeamId = table.Column<Guid>(type: "uuid", nullable: true),
+                    PlayerId = table.Column<string>(type: "text", nullable: true),
+                    AssistingPlayerId = table.Column<string>(type: "text", nullable: true),
+                    FoulerId = table.Column<string>(type: "text", nullable: true),
+                    FouledId = table.Column<string>(type: "text", nullable: true),
+                    SubstituteInId = table.Column<string>(type: "text", nullable: true),
+                    SubstituteOutId = table.Column<string>(type: "text", nullable: true),
+                    InjuryId = table.Column<Guid>(type: "uuid", nullable: true),
+                    MatchId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MatchEvents", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MatchEvents_AspNetUsers_AssistingPlayerId",
+                        column: x => x.AssistingPlayerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_MatchEvents_AspNetUsers_FouledId",
+                        column: x => x.FouledId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_MatchEvents_AspNetUsers_FoulerId",
+                        column: x => x.FoulerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_MatchEvents_AspNetUsers_PlayerId",
+                        column: x => x.PlayerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_MatchEvents_AspNetUsers_SubstituteInId",
+                        column: x => x.SubstituteInId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_MatchEvents_AspNetUsers_SubstituteOutId",
+                        column: x => x.SubstituteOutId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_MatchEvents_Matches_MatchId",
+                        column: x => x.MatchId,
+                        principalTable: "Matches",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MatchEvents_PlayerInjuries_InjuryId",
+                        column: x => x.InjuryId,
+                        principalTable: "PlayerInjuries",
                         principalColumn: "Id");
                 });
 
@@ -695,6 +809,63 @@ namespace Infrastructure.Migrations
                 column: "StadiumId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Matches_FixtureId",
+                table: "Matches",
+                column: "FixtureId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MatchEvents_AssistingPlayerId",
+                table: "MatchEvents",
+                column: "AssistingPlayerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MatchEvents_FouledId",
+                table: "MatchEvents",
+                column: "FouledId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MatchEvents_FoulerId",
+                table: "MatchEvents",
+                column: "FoulerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MatchEvents_InjuryId",
+                table: "MatchEvents",
+                column: "InjuryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MatchEvents_MatchId",
+                table: "MatchEvents",
+                column: "MatchId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MatchEvents_PlayerId",
+                table: "MatchEvents",
+                column: "PlayerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MatchEvents_SubstituteInId",
+                table: "MatchEvents",
+                column: "SubstituteInId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MatchEvents_SubstituteOutId",
+                table: "MatchEvents",
+                column: "SubstituteOutId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MatchEvents_TeamId",
+                table: "MatchEvents",
+                column: "TeamId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MatchRecords_MatchId",
+                table: "MatchRecords",
+                column: "MatchId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Organizations_PhysicalAddressId",
                 table: "Organizations",
                 column: "PhysicalAddressId");
@@ -708,6 +879,11 @@ namespace Infrastructure.Migrations
                 name: "IX_Organizations_TenantId",
                 table: "Organizations",
                 column: "TenantId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PlayerInjuries_PlayerId",
+                table: "PlayerInjuries",
+                column: "PlayerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PlayerTransferRecords_FromClubId",
@@ -913,6 +1089,13 @@ namespace Infrastructure.Migrations
                 onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
+                name: "FK_MatchEvents_Teams_TeamId",
+                table: "MatchEvents",
+                column: "TeamId",
+                principalTable: "Teams",
+                principalColumn: "Id");
+
+            migrationBuilder.AddForeignKey(
                 name: "FK_Organizations_Tenants_TenantId",
                 table: "Organizations",
                 column: "TenantId",
@@ -967,10 +1150,7 @@ namespace Infrastructure.Migrations
                 name: "FileResources");
 
             migrationBuilder.DropTable(
-                name: "Fixtures");
-
-            migrationBuilder.DropTable(
-                name: "Matches");
+                name: "MatchEvents");
 
             migrationBuilder.DropTable(
                 name: "MatchRecords");
@@ -980,6 +1160,15 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "PlayerInjuries");
+
+            migrationBuilder.DropTable(
+                name: "Matches");
+
+            migrationBuilder.DropTable(
+                name: "Fixtures");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

@@ -19,6 +19,9 @@ namespace Domain.Entities
         public Guid SubscriptionId { get; set; }
         [ForeignKey(nameof(SubscriptionId))]
         public virtual Subscription Subscription { get; set; }
+        // Subscription details
+        public bool IsTrial { get; set; }
+        public DateTime? TrialEndAt { get; set; }
 
         // Metadata
         public DateTime StartAt { get; set; }

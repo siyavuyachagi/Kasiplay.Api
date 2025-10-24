@@ -86,13 +86,6 @@ namespace Infrastructure.Data
                     .OnDelete(DeleteBehavior.SetNull);
             });
 
-            // Configure PhysicalAddress
-            builder.Entity<PhysicalAddress>(entity =>
-            {
-                entity.HasKey(e => e.Id);
-                entity.Property(e => e.Id).HasDefaultValueSql("NEWID()");
-            });
-
 
             // One Tenant -> Many TenantSubscriptions (history)
             builder.Entity<TenantSubscription>()

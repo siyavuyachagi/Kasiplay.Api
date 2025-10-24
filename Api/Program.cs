@@ -18,7 +18,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
             maxRetryCount: 5,
             maxRetryDelay: TimeSpan.FromSeconds(10),
             errorCodesToAdd: null);
-        npgsqlOptionsAction.MigrationsAssembly("Infrastructure");
+        //npgsqlOptionsAction.MigrationsAssembly("../Infrastructure");
     });
     options.EnableDetailedErrors();
 });
