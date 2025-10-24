@@ -9,12 +9,19 @@ namespace Domain.Entities
         public Guid Id { get; set; }
 
         public string City { get; set; }
-        public string Stadium { get; set; }
         public string ShortName { get; set; }
 
         // System metadata
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+
+        public Guid? StadiumId { get; set; }
+        [ForeignKey(nameof(StadiumId))]
+        public virtual Stadium Stadium { get; set; }
+
+        public Guid? PhysicalAddressId { get; set; }
+        [ForeignKey(nameof(PhysicalAddressId))]
+        public virtual PhysicalAddress PhysicalAddress { get; set; }
 
         // Navigation properties
         public virtual ICollection<League> Leagues { get; set; } = new List<League>();

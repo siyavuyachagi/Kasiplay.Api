@@ -3,22 +3,23 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    public class Organization
+    public class Stadium
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
-        public Guid TenantId { get; set; }
-        [ForeignKey(nameof(TenantId))]
-        public virtual Tenant Tenant { get; set; }
-
         public string Name { get; set; }
-        public string? Description { get; set; }
-        public int YearEstablished { get; set; }
 
-        // System metadata
+        public Guid? PhysicalAddressId { get; set; }
+        [ForeignKey(nameof(PhysicalAddressId))]
+        public virtual PhysicalAddress PhysicalAddress { get; set; }
+
+        //Audit/System metadata
         public bool IsDeleted { get; set; } = false; //Soft delete
         public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+
+        // Navigation properties
+        public virtual ICollection<Club> Clubs { get; set; } = new List<Club>();
     }
 }

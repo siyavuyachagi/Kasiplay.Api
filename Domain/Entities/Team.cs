@@ -25,9 +25,11 @@ namespace Domain.Entities
         public DateTime FoundedAt { get; set; }
 
         // System metadata
+        public bool IsDeleted { get; set; } = false; //Soft delete
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
         public virtual ICollection<Player> Players { get; set; } = new List<Player>();
+        public virtual string? Discriminator { get; set; }
     }
 }

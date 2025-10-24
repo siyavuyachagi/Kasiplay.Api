@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities
 {
-    public class Cup: Competition
+    public class Fan: ApplicationUser
     {
 
     }
